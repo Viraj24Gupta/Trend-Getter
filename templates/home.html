@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/39c8bc8c71.js"></script>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+<div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li><a href="/templates/home.html">Home</a></li>
+            <li><a href="/templates/fav.html">Favourites</a></li>
+            <li><a id="dark">Dark Mode</a></li>
+            <li><a href="">Sign Out</a></li>
+        </ul>
+    </div>
+    <!--put everything in newww -->
+    <div id="page-content-wrapper">
+        <nav class="topnav"><div class="nav-wrapper">
+            <ul>
+                <li><a id="menu-toggle"><i class="fas fa-align-justify"></i></a></li>
+                <li><h1>TrendGetter</h1></li>
+            </ul>
+        </div></nav>
+        <div class="newww">
+            <div class="container">
+                <h1>Product Filter</h1>
+                <!-- Search box -->
+                <div class="search-box">
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="search" placeholder="Search Product">
+                        <button class="searchicon" type="submit"><i class="fas fa-search"></i></button>
+                        <!-- <button id="btn-search">Search</button> -->
+                    </form>
+                </div>
+                <div class="filter-box">
+                    <a href="#" class="btn active" data-filter="all">All</a>
+                    <a href="#" class="btn" data-filter="watch">Watch</a>
+                    <a href="#" class="btn" data-filter="shirt">Shirt</a>
+                    <a href="#" class="btn" data-filter="gown">Gown</a>
+                    <a href="#" class="btn" data-filter="jewelry">Jewelry</a>
+                </div>
+            </div>
+
+
+            <main>
+                <div class="slide-container">
+                    <section class="container" id="store-products">
+
+
+                        <div class="store-product jewelry">
+                            <img src="/assets/images/11.png" alt="" class="myImg" data-original="11.png">
+                            <div class="product-details">
+                                <h2>Jewelry Product</h2>
+                                 <p> <span>$39.99</span> $29.99</p>
+                                <a href="#">Favourite</a>
+                            </div>
+                        </div>
+
+                        <div class="store-product watch">
+                            <img src="/assets/images/13.png" alt="" class ="myImg" data-original="13.png">
+                            <div class="product-details">
+                                <h2>Watch Product</h2>
+                                <p> <span>$39.99</span> $29.99</p>
+                                <a href="#">Favourite</a>
+                            </div>
+                        </div>
+                        <div class="store-product shirt">
+                            <img src="/assets/images/4.png" alt="" class ="myImg" data-original="4.png">
+                            <div class="product-details">
+                                <h2>Shirt Product</h2>
+                                <p> <span>$39.99</span> $29.99</p>
+                                <a href="#">Favourite</a>
+                            </div>
+                        </div>
+                        <div class="store-product shirt">
+                            <img src="/assets/images/5.png" alt="" class ="myImg" data-original="5.png">
+                            <div class="product-details">
+                                <h2>Shirt Product</h2>
+                                <p> <span>$39.99</span> $29.99</p>
+                                <a href="#">Favourite</a>
+                            </div>
+                        </div>
+                        <div class="store-product gown">
+                            <img src="/assets/images/6.png" alt="" class ="myImg" data-original="6.png">
+                            <div class="product-details">
+                                <h2>Gown Product</h2>
+                                <p> <span>$39.99</span> $29.99</p>
+                                <a href="#">Favourite</a>
+                            </div>
+                        </div>
+                        <div class="store-product shirt">
+                            <img src="/assets/images/7.png" alt="" class ="myImg" data-original="7.png">
+                            <div class="product-details">
+                                <h2>Shirt Product</h2>
+                                <p> <span>$39.99</span> $29.99</p>
+                                <a href="#">Favourite</a>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+				
+            </main>
+			<div class = "modal">
+					<img src="/assets/images/11.png" alt="" class = "full-image">
+			</div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/modal.js"></script>
+<script type="text/javascript" src="/js/script.js"></script>
+<script type="text/javascript" src="/js/home.js"></script>
+</body>
+</html>

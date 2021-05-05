@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Century Gothic",sans-serif!important;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: lightgray;
+    border-radius: 25px;
+}
+/* Sidebar */
+#sidebar-wrapper{
+    z-index:1;
+    position: fixed;
+    width:0;
+    height:100%;
+    overflow-y:hidden;
+    background-color:#159957;
+    opacity:2.0;
+    transition:all .2s;
+    display:flex;
+    align-items:center;
+}
+/* Main Content */
+#page-content-wrapper{
+    width: 100%;
+    position: absolute;
+    transition:all .2s;
+}
+#menu-toggle{
+    font-size: 30px;
+    transition:all .2s;
+    margin-left: 10px;
+    position: sticky;
+}
+/* Change the width of the sidebar to display it*/
+#wrapper.menuDisplayed #sidebar-wrapper{
+    width:250px;
+}
+#wrapper.menuDisplayed #page-content-wrapper{
+    padding-left:250px;
+}
+/* Sidebar styling */
+.sidebar-wrapper{
+    z-index: 100;
+}
+.sidebar-nav{
+    padding:0;
+    list-style:none;
+    transition:all .2s;
+    width:100%;
+    text-align:center;
+    font-size: larger;
+}
+.sidebar-nav li{
+    line-height:40px;
+    width:100%;
+    transition:all .2s;
+    padding:10px;
+    font-size: 25px;
+}
+.sidebar-nav li a {
+    display:block;
+    text-decoration:none;
+    color: black;
+}
+.sidebar-nav li:hover{
+    background: darkslategrey;
+}
+.topnav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 500;
+}
+.topnav h1{
+    font-size: 35px;
+}
+.topnav ul {
+    list-style-type: none;
+}
+.topnav ul li{
+    display: inline-grid;
+    margin: 0 auto;
+}
+.nav-wrapper{
+    background: linear-gradient(to right, #159957, #155799);
+    font-family: "Ink Free",sans-serif;
+    font-style: italic;
+}
+.newww{
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 50px;
+}
+.searchbar{
+    text-align: center;
+}
+.searchicon{
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+}
+#search{
+    border: 0;
+    border-bottom: 1px solid black;
+    outline: 0;
+    font-size: 20px;
+}
