@@ -35,6 +35,10 @@ app.get("/home", function(req,res){
     console.log("GET home");
     res.sendFile(path.join(__dirname,'./templates/home.html'))
 });
+app.get("/favourites", function(req,res){
+    console.log("GET favourites");
+    res.sendFile(path.join(__dirname,'./templates/fav.html'))
+});
 app.get("/signup", function(req,res){
     console.log("GET signup");
     res.sendFile(path.join(__dirname,'./templates/signup.html'))
