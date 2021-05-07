@@ -1,12 +1,12 @@
-var express = require('express');
-var path = require('path');
-var bodyParser = require('body-parser');
-var firebase = require('firebase');
-var dotenv = require('dotenv').config();
+let express = require('express');
+let path = require('path');
+let bodyParser = require('body-parser');
+let firebase = require('firebase');
+let dotenv = require('dotenv').config();
 
-var app = express();
+let app = express();
 
-var firebaseConfig = {
+let firebaseConfig = {
     apiKey: process.env.apiKey,
     authDomain: process.env.authDomain,
     databaseURL: process.env.databaseURL,
@@ -54,7 +54,7 @@ app.post("/signup", function(req, res){
             .then(function(snapshot) {
                 console.log(snapshot.val());
                 if(snapshot.val() == null){
-                    var data = {name, username, email, password, cpassword} = req.body
+                    let data = {name, username, email, password, cpassword} = req.body
                     firebase.database().ref(req.body.username).set({name, username, email, password, cpassword});
                     res.sendFile(path.join(__dirname,'./templates/signin.html'))}
 
