@@ -40,10 +40,58 @@
                 <input name="cpassword" type="password" id="conpass" autocomplete="off" placeholder="Confirm Password" required/>
             </div>
             <div class="submit">
-                <input type="submit"  value="Sign up">
+                <input onclick="validate()"  type="submit"  value="Sign up">
             </div>
         </form>
     </div>
 </div>
+<script>
+    function validate() {
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+        let name = document.getElementById("name");
+        let username = document.getElementById("username");
+        let conpass = document.getElementById("conpass");
+
+        let nameRegex = /^[a-zA-Z a-zA-Z]+$/;
+        if (!nameRegex.test(name.value)) {
+            name.setCustomValidity("Name should be of the format First name then Last name");
+        }
+        else {
+            name.setCustomValidity("");
+        }
+
+        let usernameRegex = /^[a-zA-Z0-9]+$/;
+        if (!usernameRegex.test(username.value)) {
+            name.setCustomValidity("Username should be alphanumeric");
+        }
+        else {
+            name.setCustomValidity("");
+        }
+
+        let emailRegex = /^[a-z0-9_]*[@][a-z]+[.][a-z]+$/;
+        if (!emailRegex.test(email.value)) {
+            email.setCustomValidity("Email is not valid");
+        }
+        else {
+            email.setCustomValidity("");
+        }
+
+        let passwordRegex = /^[A-Z][a-z][A-Za-z0-9]{7,13}$/;
+        if (!passwordRegex.test(password.value)) {
+            password.setCustomValidity("password should contain 8- 16 digits and 1 uppercase,1 lowercase and 1 number atleast");
+        }
+        else {
+            password.setCustomValidity("");
+        }
+
+        if (String(conpass) !== String(password)){
+            conpass.setCustomValidity("password do not match");
+        }
+        else{
+            conpass.setCustomValidity("");
+        }
+    }
+</script>
 </body>
 </html>
