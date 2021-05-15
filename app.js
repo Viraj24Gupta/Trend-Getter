@@ -31,13 +31,25 @@ app.get("/signin", function(req,res){
     console.log("GET signin");
     res.sendFile(path.join(__dirname,'./templates/signin.html'))
 });
-app.get("/home", function(req,res){
-    console.log("GET home");
-    res.sendFile(path.join(__dirname,'./templates/home.html'))
+app.get("/about", function(req,res){
+    console.log("GET about");
+    res.sendFile(path.join(__dirname,'./templates/about.html'))
+});
+app.get("/wearable", function(req,res){
+    console.log("GET wearable");
+    res.sendFile(path.join(__dirname,'./templates/wearable.html'))
+});
+app.get("/food", function(req,res){
+    console.log("GET about");
+    res.sendFile(path.join(__dirname,'./templates/food.html'))
 });
 app.get("/favourites", function(req,res){
     console.log("GET favourites");
     res.sendFile(path.join(__dirname,'./templates/fav.html'))
+});
+app.get('/signout', function(req,res){
+    console.log('GET signout');
+    res.sendFile(path.join(__dirname, './templates/signin.html'));
 });
 app.get("/signup", function(req,res){
     console.log("GET signup");
@@ -77,7 +89,7 @@ app.post("/signin", function(req,res){
                 res.send("check username/password")
             }
             else if((snapshot.val().password == req.body.password) && (snapshot.val().username == req.body.username)){
-                res.sendFile((path.join(__dirname,'./templates/home.html')))
+                res.sendFile((path.join(__dirname,'./templates/about.html')))
             }
         })
 });

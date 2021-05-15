@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/39c8bc8c71.js"></script>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+<div id="particles-js">
+	<div id="wrapper">
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li><a href="/about">About</a></li>
+				<li><a href="/wearable">Wearable</a></li>
+				<li><a href="/food">Food</a></li>
+				<li><a href="/favourites">Favourites</a></li>
+				<li><a href="/signout">Sign Out</a></li>
+			</ul>
+		</div>
+		<!--put everything in newww -->
+		<div id="page-content-wrapper">
+			<nav class="topnav"><div class="nav-wrapper">
+				<ul>
+					<li><a id="menu-toggle"><i class="fas fa-align-justify"></i></a></li>
+					<li><h1>TrendGetter</h1></li>
+				</ul>
+			</div></nav>
+			<div class="newww">
+				<div class="container">
+					<!-- Search box -->
+					<div class="search-box">
+						<form action="" onsubmit="return false">
+							<input type="text" id="search" placeholder="Search Product">
+						</form>
+					</div>
+					<div class="filter-box">
+						<a href="#" class="btn active" data-filter="all">All</a>
+						<a href="#" class="btn" data-filter="watch">Watch</a>
+						<a href="#" class="btn" data-filter="shirt">Shirt</a>
+						<a href="#" class="btn" data-filter="women-wear">Women-Wear</a>
+						<a href="#" class="btn" data-filter="jewelry">Jewelry</a>
+						<a href="#" class="btn" data-filter="shoes">Shoes</a>
+					</div>
+				</div>
+
+
+				<main>
+					<div class="slide-container">
+						<section class="container" id="store-products">
+
+							<div class="store-product watch" id="1">
+								<img src="/assets/images/1.png" alt="" class="myImg" data-original="1.png">
+								<div class="product-details">
+									<h2>Watch Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product watch">
+								<img src="/assets/images/2.png" alt="" class="myImg" data-original="2.png">
+								<div class="product-details">
+									<h2>Watch Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product jewelry">
+								<img src="/assets/images/11.png" alt="" class="myImg" data-original="11.png">
+								<div class="product-details">
+									<h2>Jewelry Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()" >Favourite</a>
+								</div>
+							</div>
+
+							<div class="store-product watch">
+								<img src="/assets/images/13.png" alt="" class ="myImg" data-original="13.png">
+								<div class="product-details">
+									<h2>Watch Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product shirt">
+								<img src="/assets/images/3.png" alt="" class="myImg" data-original="3.png">
+								<div class="product-details">
+									<h2>Shirt Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product shirt">
+								<img src="/assets/images/4.png" alt="" class ="myImg" data-original="4.png">
+								<div class="product-details">
+									<h2>Shirt Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product shirt">
+								<img src="/assets/images/5.png" alt="" class ="myImg" data-original="5.png">
+								<div class="product-details">
+									<h2>Shirt Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product women-wear">
+								<img src="/assets/images/6.png" alt="" class ="myImg" data-original="6.png">
+								<div class="product-details">
+									<h2>Gown Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product shirt">
+								<img src="/assets/images/7.png" alt="" class ="myImg" data-original="7.png">
+								<div class="product-details">
+									<h2>Shirt Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product jewelry">
+								<img src="/assets/images/12.png" alt="" class="myImg" data-original="12.png">
+								<div class="product-details">
+									<h2>Jewelry Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()" >Favourite</a>
+								</div>
+							</div>
+							<div class="store-product shirt">
+								<img src="/assets/images/8.png" alt="" class ="myImg" data-original="8.png">
+								<div class="product-details">
+									<h2>Shirt Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product jewelry">
+								<img src="/assets/images/9.png" alt="" class ="myImg" data-original="9.png">
+								<div class="product-details">
+									<h2>Jewelry Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product jewelry">
+								<img src="/assets/images/10.png" alt="" class ="myImg" data-original="10.png">
+								<div class="product-details">
+									<h2>Jewelry Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product shoes">
+								<img src="/assets/images/14.jpg" width="250" height="250" alt="" class="myImg" data-original="14.jpg">
+								<div class="product-details">
+									<h2>Shoes Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product shoes">
+								<img src="/assets/images/15.jpg" width="250" height="250" alt="" class="myImg" data-original="15.jpg">
+								<div class="product-details">
+									<h2>Shoes Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product shoes">
+								<img src="/assets/images/16.jpg" width="250" height="250" alt="" class="myImg" data-original="16.jpg">
+								<div class="product-details">
+									<h2>Shoes Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product shoes">
+								<img src="/assets/images/17.jpg" width="250" height="250" alt="" class="myImg" data-original="17.jpg">
+								<div class="product-details">
+									<h2>Shoes Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product shoes">
+								<img src="/assets/images/18.jpg" width="250" height="250" alt="" class="myImg" data-original="18.jpg">
+								<div class="product-details">
+									<h2>Shoes Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product watch">
+								<img src="/assets/images/19.jpg" width="250" height="250" alt="" class="myImg" data-original="19.jpg">
+								<div class="product-details">
+									<h2>Watch Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product watch">
+								<img src="/assets/images/20.jpg" width="250" height="250" alt="" class="myImg" data-original="20.jpg">
+								<div class="product-details">
+									<h2>Watch Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product women-wear">
+								<img src="/assets/images/21.jpg" width="250" height="250" alt="" class="myImg" data-original="21.jpg">
+								<div class="product-details">
+									<h2>Women Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product women-wear">
+								<img src="/assets/images/22.jpg" width="250" height="250" alt="" class="myImg" data-original="22.jpg">
+								<div class="product-details">
+									<h2>Women Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product women-wear">
+								<img src="/assets/images/23.jpg" width="250" height="250" alt="" class="myImg" data-original="23.jpg">
+								<div class="product-details">
+									<h2>Women Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product jewelry">
+								<img src="/assets/images/24.jpg" width="250" height="250" alt="" class="myImg" data-original="24.jpg">
+								<div class="product-details">
+									<h2>Women Product</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+						</section>
+					</div>
+
+				</main>
+				<div class = "modal">
+					<img src="/assets/images/11.png" alt="" class = "full-image">
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/node_modules/particles.js/particles.js"></script>
+<script src="/node_modules/particles.js/demo/js/app.js"></script>
+<script type="text/javascript" src="../js/modal.js"></script>
+<script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript" src="../js/home.js"></script>
+</body>
+</html>

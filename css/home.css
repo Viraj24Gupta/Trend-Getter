@@ -5,6 +5,7 @@
 }
 body{
     font-family: "Century Gothic",sans-serif!important;
+    background-color: black;
 }
 ::-webkit-scrollbar {
     width: 10px;
@@ -111,4 +112,7 @@ body{
     border-bottom: 1px solid black;
     outline: 0;
     font-size: 20px;
+}
+#particles-js{
+    background: black;
 }

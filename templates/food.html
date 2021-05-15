@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/39c8bc8c71.js"></script>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+<div id="particles-js">
+	<div id="wrapper">
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li><a href="/about">About</a></li>
+				<li><a href="/wearable">Wearable</a></li>
+				<li><a href="/food">Food</a></li>
+				<li><a href="/favourites">Favourites</a></li>
+				<li><a href="/signout">Sign Out</a></li>
+			</ul>
+		</div>
+		<!--put everything in newww -->
+		<div id="page-content-wrapper">
+			<nav class="topnav"><div class="nav-wrapper">
+				<ul>
+					<li><a id="menu-toggle"><i class="fas fa-align-justify"></i></a></li>
+					<li><h1>TrendGetter</h1></li>
+				</ul>
+			</div></nav>
+			<div class="newww">
+				<div class="container">
+					<div class="search-box">
+						<form action="" onsubmit="return false">
+							<input type="text" id="search" placeholder="Search Product">
+						</form>
+					</div>
+					<div class="filter-box">
+						<a href="#" class="btn active" data-filter="all">All</a>
+						<a href="#" class="btn" data-filter="Chinese">Chinese</a>
+						<a href="#" class="btn" data-filter="French">French</a>
+						<a href="#" class="btn" data-filter="Italian">Italian</a>
+						<a href="#" class="btn" data-filter="Japanese">Japanese</a>
+						<a href="#" class="btn" data-filter="Mexican">Mexican</a>
+					</div>
+				</div>
+
+
+				<main>
+					<div class="slide-container">
+						<section class="container" id="store-products">
+
+							<div class="store-product Chinese">
+								<img src="/assets/images/26.jpg" alt="" width="250" height="250" class="myImg" data-original="26.jpg">
+								<div class="product-details">
+									<h2>Chinese</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Chinese">
+								<img src="/assets/images/30.jpg" alt="" width="250" height="250"class="myImg" data-original="30.jpg">
+								<div class="product-details">
+									<h2>Chinese</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Chinese">
+								<img src="/assets/images/32.jpg" alt="" width="250" height="250"class="myImg" data-original="32.jpg">
+								<div class="product-details">
+									<h2>Chinese</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+
+							<div class="store-product Chinese">
+								<img src="/assets/images/36.jpg" alt="" width="250" height="250"class="myImg" data-original="36.jpg">
+								<div class="product-details">
+									<h2>Chinese</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Chinese">
+								<img src="/assets/images/37.jpg" alt="" width="250" height="250"class="myImg" data-original="37.jpg">
+								<div class="product-details">
+									<h2>Chinese</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product French">
+								<img src="/assets/images/25.jpg" alt="" width="250" height="250"class ="myImg" data-original="25.jpg">
+								<div class="product-details">
+									<h2>French</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product French">
+								<img src="/assets/images/27.jpg" alt="" width="250" height="250"class ="myImg" data-original="27.jpg">
+								<div class="product-details">
+									<h2>French</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product French">
+								<img src="/assets/images/28.jpg" alt="" width="250" height="250"class ="myImg" data-original="28.jpg">
+								<div class="product-details">
+									<h2>French</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product French">
+								<img src="/assets/images/29.jpg" alt="" width="250" height="250"class ="myImg" data-original="29.jpg">
+								<div class="product-details">
+									<h2>French</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product French">
+								<img src="/assets/images/31.jpg" alt="" width="250" height="250"class ="myImg" data-original="31.jpg">
+								<div class="product-details">
+									<h2>French</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Italian">
+								<img src="/assets/images/82.jpg" alt="" width="250" height="250"class ="myImg" data-original="82.jpg">
+								<div class="product-details">
+									<h2>Italian</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Italian">
+								<img src="/assets/images/87.jpg" alt="" width="250" height="250"class ="myImg" data-original="87.jpg">
+								<div class="product-details">
+									<h2>Italian</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Italian">
+								<img src="/assets/images/95.jpg" alt="" width="250" height="250"class ="myImg" data-original="95.jpg">
+								<div class="product-details">
+									<h2>Italian</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Italian">
+								<img src="/assets/images/96.jpg" alt="" width="250" height="250"class ="myImg" data-original="96.jpg">
+								<div class="product-details">
+									<h2>Italian</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Italian">
+								<img src="/assets/images/99.jpg" alt="" width="250" height="250"class ="myImg" data-original="99.jpg">
+								<div class="product-details">
+									<h2>Italian</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Japanese">
+								<img src="/assets/images/41.jpg" width="250" height="250" alt="" class="myImg" data-original="41.jpg">
+								<div class="product-details">
+									<h2>Japanese</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Japanese">
+								<img src="/assets/images/42.jpg" width="250" height="250" alt="" class="myImg" data-original="42.jpg">
+								<div class="product-details">
+									<h2>Japanese</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Japanese">
+								<img src="/assets/images/43.jpg" width="250" height="250" alt="" class="myImg" data-original="43.jpg">
+								<div class="product-details">
+									<h2>Japanese</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Japanese">
+								<img src="/assets/images/44.jpg" width="250" height="250" alt="" class="myImg" data-original="44.jpg">
+								<div class="product-details">
+									<h2>Japanese</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Japanese">
+								<img src="/assets/images/45.jpg" width="250" height="250" alt="" class="myImg" data-original="45.jpg">
+								<div class="product-details">
+									<h2>Japanese</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Mexican">
+								<img src="/assets/images/59.jpg" width="250" height="250" alt="" class="myImg" data-original="59.jpg">
+								<div class="product-details">
+									<h2>Mexican</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Mexican">
+								<img src="/assets/images/61.jpg" width="250" height="250" alt="" class="myImg" data-original="61.jpg">
+								<div class="product-details">
+									<h2>Mexican</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Mexican">
+								<img src="/assets/images/65.jpg" width="250" height="250" alt="" class="myImg" data-original="65.jpg">
+								<div class="product-details">
+									<h2>Mexican</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Mexican">
+								<img src="/assets/images/77.jpg" width="250" height="250" alt="" class="myImg" data-original="77.jpg">
+								<div class="product-details">
+									<h2>Mexican</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+							<div class="store-product Mexican">
+								<img src="/assets/images/80.jpg" width="250" height="250" alt="" class="myImg" data-original="80.jpg">
+								<div class="product-details">
+									<h2>Mexican</h2>
+									<a style="cursor: pointer;" onclick="favourite()">Favourite</a>
+								</div>
+							</div>
+						</section>
+					</div>
+
+				</main>
+				<div class = "modal">
+					<img src="/assets/images/11.png" alt="" class = "full-image">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/node_modules/particles.js/particles.js"></script>
+<script src="/node_modules/particles.js/demo/js/app.js"></script>
+<script type="text/javascript" src="../js/modal.js"></script>
+<script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript" src="../js/home.js"></script>
+</body>
+</html> 
