@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Favourites</title>
+    <title>Upload</title>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,14 +36,9 @@
                 </ul>
             </div></nav>
             <div class="newww">
-                <h1 style="color: white; text-align: center;font-size: 50px">FAVOURITES</h1>
-                <main>
-                    <div class="slide-container">
-                        <section class="container" id="store-products">
 
-                        </section>
-                    </div>
-                </main>
+
+
             </div>
         </div>
     </div>
@@ -52,27 +47,6 @@
 <script src="/node_modules/particles.js/particles.js"></script>
 <script src="/node_modules/particles.js/demo/js/app.js"></script>
 <script type="text/javascript" src="/js/home.js"></script>
-<script type="text/javascript" src="../js/modal.js"></script>
 <script type="text/javascript" src="../js/script.js"></script>
-<script>
-    let getdata = getCookie("favourite");
-    console.log(getdata);
-    let parsedata = JSON.parse(getdata);
-    var x;
-    for(x in parsedata){
-        if(x ==0){
-            continue
-        }
-        let a = parsedata[x][0].split("/");
-        let data = `
-        <div class="store-product watch">
-        <img src="${parsedata[x][0]}" alt="" width="250" height="250" class="myImg" data-original="${a[a.length-1]}">
-        <div class="product-details">
-            <h2>${parsedata[x][1]}</h2>
-        </div>
-    </div> `;
-        $('section.container').append(data);
-    }
-</script>
 </body>
 </html>

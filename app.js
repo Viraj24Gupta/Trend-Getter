@@ -40,8 +40,16 @@ app.get("/wearable", function(req,res){
     res.sendFile(path.join(__dirname,'./templates/wearable.html'))
 });
 app.get("/food", function(req,res){
-    console.log("GET about");
+    console.log("GET food");
     res.sendFile(path.join(__dirname,'./templates/food.html'))
+});
+app.get("/blogs", function(req,res){
+    console.log("GET blogs");
+    res.sendFile(path.join(__dirname,'./templates/blog.html'))
+});
+app.get("/upload", function(req,res){
+    console.log("GET upload");
+    res.sendFile(path.join(__dirname,'./templates/upload.html'))
 });
 app.get("/favourites", function(req,res){
     console.log("GET favourites");
