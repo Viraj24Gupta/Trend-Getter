@@ -116,3 +116,6 @@ body{
 #particles-js{
     background: black;
 }
+.checked{
+    color: yellow;
+}
