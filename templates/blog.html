@@ -10,16 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css\framework.css">
-    <link rel="stylesheet" href="css\layout.css">
+    
     <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="../css/modal.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet/less" href="css\main.less" type="text/css" />
+    <link rel="stylesheet" href="css\dist\main.css">
+    <script src="http://lesscss.googlecode.com/files/less-1.0.30.min.js"></script>
     
 </head>
 
 <body>
-<div id="particles-js">
+
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -35,74 +36,262 @@
         </div>
         <!--put everything in newww -->
         <div id="page-content-wrapper">
-            <nav class="topnav"><div class="nav-wrapper">
+            <nav class="topnav">
+              <div class="nav-wrapper">
                 <ul>
                     <li><a id="menu-toggle"><i class="fas fa-align-justify"></i></a></li>
                     <li><h1>TrendGetter</h1></li>
                 </ul>
-            </div></nav>
-            
-            <div class="wrapper row2">
-                <section class="hoc container clear"> 
-                  <div class="sectiontitle">
-                    <h1 style="color: aliceblue; font-size: 4.5rem;margin-top: 4.5rem;font-family: 'Alfa Slab One', cursive;">Have a look</h1>
-                    <h2 style="color: aliceblue;font-family: 'Alfa Slab One', cursive;font-size: 2rem;word-spacing: 5px;letter-spacing: 4px;">At some cool blogs</h2>
-                  </div>
-                  <div id="latest" class="group">
-                    <article class="one_third first"><a class="imgover" href="#"><img src="assets\images\19.jpg" alt=""></a>
-                      <div class="excerpt">
-                        <h6 class="heading">Elementum laoreet lorem donec</h6>
-                        <p>Pede nam quis mauris nunc volutpat elementum sapien in hendrerit justo non nisl sed dictum libero et nisi.</p>
-                        <footer><a href="#">Read More <i class="fas fa-angle-right"></i></a></footer>
-                      </div>
-                    </article>
-                    <article class="one_third"><a class="imgover" href="#"><img src="assets\images\19.jpg" alt=""></a>
-                      <div class="excerpt">
-                        <h6 class="heading">Vestibulum accumsan sagittis</h6>
-                        <p>Orci nulla purus pellentesque risus magna vulputate vitae sodales in aliquam at tortor praesent tincidunt.</p>
-                        <footer><a href="#">Read More <i class="fas fa-angle-right"></i></a></footer>
-                      </div>
-                    </article>
-                    <article class="one_third"><a class="imgover" href="#"><img src="assets\images\19.jpg" alt=""></a>
-                      <div class="excerpt">
-                        <h6 class="heading">Lorem in odio pellentesque at</h6>
-                        <p>Donec faucibus lorem ut neque pellentesque quam donec imperdiet nisl sed euismod ullamcorper tortor cras.</p>
-                        <footer><a href="#">Read More <i class="fas fa-angle-right"></i></a></footer>
-                      </div>
-                    </article>
-                    <div style="height: 1rem;"></div>
-                    <article class="one_third first"><a class="imgover" href="#"><img src="assets\images\19.jpg" alt=""></a>
-                        <div class="excerpt">
-                          <h6 class="heading">Lorem in odio pellentesque at</h6>
-                          <p>Donec faucibus lorem ut neque pellentesque quam donec imperdiet nisl sed euismod ullamcorper tortor cras.</p>
-                          <footer><a href="#">Read More <i class="fas fa-angle-right"></i></a></footer>
-                        </div>
-                      </article>
-                      <article class="one_third"><a class="imgover" href="#"><img src="assets\images\19.jpg" alt=""></a>
-                        <div class="excerpt">
-                          <h6 class="heading">Lorem in odio pellentesque at</h6>
-                          <p>Donec faucibus lorem ut neque pellentesque quam donec imperdiet nisl sed euismod ullamcorper tortor cras.</p>
-                          <footer><a href="#">Read More <i class="fas fa-angle-right"></i></a></footer>
-                        </div>
-                      </article>
-                      <article class="one_third"><a class="imgover" href="#"><img src="assets\images\19.jpg" alt=""></a>
-                        <div class="excerpt">
-                          <h6 class="heading">Lorem in odio pellentesque at</h6>
-                          <p>Donec faucibus lorem ut neque pellentesque quam donec imperdiet nisl sed euismod ullamcorper tortor cras.</p>
-                          <footer><a href="#">Read More <i class="fas fa-angle-right"></i></a></footer>
-                        </div>
-                      </article>
-                  </div>
-                  
-                  
-                </section>
               </div>
-        </div>
-    </div>
-</div>
+            </nav>
+          </div>
+      </div>
+      
+      <!--------------------------------------------------------------------------->
+      <div class="cards">
 
+        <div class="card">
+          <div class="card__image-holder">
+            <img class="card__image" src="assets\images\black.jfif" width="300" height="225" alt="wave" />
+          </div>
+          <div class="card-title">
+            <a href="#" class="toggle-info btn">
+              <span class="left"></span>
+              <span class="right"></span>
+            </a>
+            <h2>
+              10 Black Separates 
+                <small>That Go Beyond the Basics</small>
+            </h2>
+          </div>
+          <div class="card-flap flap1">
+            <div class="card-description">
+              They say, “one is never over or underdressed in black.” It’s that unassumingly stylish colour that you know will work when all else fails. 
+            </div>
+            <div class="card-flap flap2">
+              <div class="card-actions">
+                <a href="https://www.faballey.com/blog/black-separates-that-go-beyond-the-basics" class="btn" target="_blank">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="card__image-holder">
+            <img class="card__image" src="assets\images\101.jpg" width="300" height="225" alt="beach" />
+          </div>
+          <div class="card-title">
+            <a href="#" class="toggle-info btn">
+              <span class="left"></span>
+              <span class="right"></span>
+            </a>
+            <h2>
+              Denny Hamlin Reveals: 
+                <small>The Air Jordan 1 Racer</small>
+            </h2>
+          </div>
+          <div class="card-flap flap1">
+            <div class="card-description">
+              This past weekend, Denny Hamlin — three-time Daytona 500 winner and one half of 23XI Racing — revealed his third Jordan Brand PE: the Air Jordan 1 Racer.
+            </div>
+            <div class="card-flap flap2">
+              <div class="card-actions">
+                <a href="https://sneakernews.com/2021/05/17/denny-hamlin-air-jordan-1-racer-pe-photos/" class="btn">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="card__image-holder">
+            <img class="card__image" src="assets\images\102.jpg" width="300" height="225" alt="mountain" />
+          </div>
+          <div class="card-title">
+            <a href="#" class="toggle-info btn">
+              <span class="left"></span>
+              <span class="right"></span>
+            </a>
+            <h2>
+              T-Shirt Color Palette:
+                <small>Shades of Blue</small>
+            </h2>
+          </div>
+          <div class="card-flap flap1">
+            <div class="card-description">
+              A list of some of our most popular blue t-shirt designs.There are a lot of t-shirt options to pick from out there. Like, a lot a lot.
+            </div>
+            <div class="card-flap flap2">
+              <div class="card-actions">
+                <a href="https://www.realthread.com/blog/t-shirt-color-palette-shades-of-blue" class="btn">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="card__image-holder">
+            <img class="card__image" src="assets\images\103.png" width="300" height="225" alt="field" />
+          </div>
+          <div class="card-title">
+            <a href="#" class="toggle-info btn">
+              <span class="left"></span>
+              <span class="right"></span>
+            </a>
+            <h2>
+              Salty Blueberry 
+                <small>+ Ginger Margarita</small>
+            </h2>
+          </div>
+          <div class="card-flap flap1">
+            <div class="card-description">
+              Salty Blueberry + Ginger Margarita by Emily Schultz. Made with Cointreau, muddled blueberry, ginger simple syrup, and blanco tequila. 
+            </div>
+            <div class="card-flap flap2">
+              <div class="card-actions">
+                <a href="https://www.bonappetit.com/recipe/salty-blueberry-ginger-margarita" class="btn">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="card__image-holder">
+            <img class="card__image" src="assets\images\104.jpg" width="300" height="225" alt="water" />
+          </div>
+          <div class="card-title">
+            <a href="#" class="toggle-info btn">
+              <span class="left"></span>
+              <span class="right"></span>
+            </a>
+            <h2>
+              Castella Pudding
+                <small>Cake (カステラプリン)</small>
+            </h2>
+          </div>
+          <div class="card-flap flap1">
+            <div class="card-description">
+              Delicate and cute little Castella Pudding Cakes are the perfect hybrid of two Japanese sweets: castella sponge cake and custard pudding.
+            </div>
+            <div class="card-flap flap2">
+              <div class="card-actions">
+                <a href="https://www.chopstickchronicles.com/castella-pudding/" class="btn">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="card__image-holder">
+            <img class="card__image" src="assets\images\105.jpg" width="300" height="225" alt="river" />
+          </div>
+          <div class="card-title">
+            <a href="#" class="toggle-info btn">
+              <span class="left"></span>
+              <span class="right"></span>
+            </a>
+            <h2>
+              Authentic Mexican
+                <small>Horchata (Rice Drink)</small>
+            </h2>
+          </div>
+          <div class="card-flap flap1">
+            <div class="card-description">
+              This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+            </div>
+            <div class="card-flap flap2">
+              <div class="card-actions">
+                <a href="https://www.mexicoinmykitchen.com/horchata-recipe/" class="btn">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="card__image-holder">
+            <img class="card__image" src="assets\images\106.jpg" width="300" height="225" alt="kite" />
+          </div>
+          <div class="card-title">
+            <a href="#" class="toggle-info btn">
+              <span class="left"></span>
+              <span class="right"></span>
+            </a>
+            <h2>
+              Yellowstone Joins
+                <small>The National Parks Foundation</small>
+            </h2>
+          </div>
+          <div class="card-flap flap1">
+            <div class="card-description">
+              The National Parks Foundation has already commemorated three of its destinations on the adidas ZX series.
+            </div>
+            <div class="card-flap flap2">
+              <div class="card-actions">
+                <a href="https://sneakernews.com/2021/05/17/adidas-zx-8000-yellowstone-fy5168/" class="btn">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card__image-holder">
+            <img class="card__image" src="assets\images\107.jpg" width="300" height="225" alt="underwater" />
+          </div>
+          <div class="card-title">
+            <a href="#" class="toggle-info btn">
+              <span class="left"></span>
+              <span class="right"></span>
+            </a>
+            <h2>
+                Hands-On
+                <small>Hublot Big Bang Unico</small>
+            </h2>
+          </div>
+          <div class="card-flap flap1">
+            <div class="card-description">
+              As we’ve seen before with other Big Bang collab references, the SORAI edition ships with a pair of pronged straps that can be easily swapped out at a push of the rectangular black button at 12 and 6:00.
+            </div>
+            <div class="card-flap flap2">
+              <div class="card-actions">
+                <a href="https://www.ablogtowatch.com/hublot-big-bang-sorai-green-ceramic-hands-on/" class="btn">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="card__image-holder">
+            <img class="card__image" src="assets\images\108.jpg" width="300" height="225" alt="desert" />
+          </div>
+          <div class="card-title">
+            <a href="#" class="toggle-info btn">
+              <span class="left"></span>
+              <span class="right"></span>
+            </a>
+            <h2>
+              Maurice Lacroix 
+                <small>Aikon Venturer GMT</small>
+            </h2>
+          </div>
+          <div class="card-flap flap1">
+            <div class="card-description">
+              If you are in the mood for a sporty GMT watch with a lot of character and a decent price, then the still-fresh Swiss Maurice Lacroix Aikon Venturer GMT 43mm should be something to take a close look at.
+            </div>
+            <div class="card-flap flap2">
+              <div class="card-actions">
+                <a href="https://www.ablogtowatch.com/watch-review-maurice-lacroix-aikon-venturer-gmt/" class="btn">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      
+      <!----------------------------------------------------------------------------->
+    
+    
 <script src="/node_modules/particles.js/particles.js"></script>
 <script src="/node_modules/particles.js/demo/js/app.js"></script>
+<script src="js\blog.js"></script>
 <script type="text/javascript" src="/js/home.js"></script>
 <script type="text/javascript" src="../js/script.js"></script>
 </body>

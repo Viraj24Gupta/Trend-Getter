@@ -58,11 +58,11 @@ hr{display:block; width:100%; height:1px; border:solid; border-width:1px 0 0 0;}
 
 address, article, aside, figcaption, figure, footer, header, main, nav, section{display:block; margin:0; padding:0;}
 
-.one_third{display:inline-block; float:left; margin:0 0 0 4.21052%; list-style:none;}
+.one_third{display:inline-block; float:left; margin:0 0 0 4.21052%; list-style:none;height: 600px;}
 
-.first{margin-left:0; clear:left;}
+.first{margin-left:0; clear:left;height: 600px;}
 
 
-.one_third{width:30.52631%;margin-bottom: 2rem;}
-p{font-size: 1.5rem;}
+.one_third{width:30.52631%;margin-bottom: 2rem;height: 60%;}
+
 

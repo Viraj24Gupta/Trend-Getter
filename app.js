@@ -102,6 +102,6 @@ app.post("/signin", function(req,res){
         })
 });
 
-app.listen(3000,()=>{
-    console.log('server at http://localhost:3000');
+app.listen(80,()=>{
+    console.log('server at http://localhost');
 });
