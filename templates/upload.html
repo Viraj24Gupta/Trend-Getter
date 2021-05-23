@@ -38,7 +38,7 @@
             </div></nav>
             <div class="newww">
                 <div class="upload">
-                    <form action="#">
+                    <form action="/upload-blog" method="POST" id="uploadForm">
                         <h1>UPLOAD A BLOG</h1>
 <!--                        <div class="row">-->
 <!--                            <input type="checkbox" name="fancy-checkbox" id="fancy-checkbox"/>-->
@@ -56,7 +56,7 @@
                         </div>
                         <div class="row">
                             <input type="file" name="fancy-file" id="fancy-file"/>
-                            <label for="fancy-text">Image</label>
+                            <label for="fancy-file">Image</label>
                         </div>
                         <div class="row">
                             <textarea name="fancy-textarea" id="fancy-textarea"></textarea>
@@ -70,6 +70,16 @@
     </div>
 </div>
 
+<script>
+    const fileSelector = document.getElementById('fancy-file');
+    fileSelector.addEventListener('change', (event) => {
+    const fileList = event.target.files[0];
+    console.log(fileList);
+    var myform = document.getElementById("uploadForm")
+    var form = new FormData(myform)
+    form.append("img", fileList)
+});
+</script>
 <script src="/node_modules/particles.js/particles.js"></script>
 <script src="/node_modules/particles.js/demo/js/app.js"></script>
 <script type="text/javascript" src="/js/home.js"></script>
