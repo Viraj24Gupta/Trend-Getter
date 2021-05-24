@@ -22,7 +22,7 @@ let firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // const bucket = firebase.bucket()
-var storage = firebase.storage()
+// var storage = firebase.storage()
 
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -109,15 +109,15 @@ app.post("/signin", function(req,res){
 });
 
 const uploads = multer({
-    storage: Multer.memoryStorage(),
+    storage: multer.memoryStorage(),
     limits: {
-      fileSize: 5 * 1024 * 1024 // no larger than 5mb, you can change as needed.
+      fileSize: 20 * 1024 * 1024 // no larger than 5mb, you can change as needed.
     }
   });
 
-app.post('/upload-blog', uploads.single("fancy-file"), async (req, res) => {
+app.post('/upload-img', uploads.single("img"), async (req, res) => {
     console.log('Upload Image');
-    console.log(req.body)
+    console.log(JSON.parse(JSON.stringify(req.file)))
     let file = req.file;
     if (file) {
         uploadImageToStorage(file).then((success) => {
@@ -129,6 +129,10 @@ app.post('/upload-blog', uploads.single("fancy-file"), async (req, res) => {
         });
     }
   });
+
+app.post('/upload-blog', function(req, res){
+    console.log(req.body)
+})
   
 app.listen(3000,()=>{
     console.log('server at http://localhost:3000');

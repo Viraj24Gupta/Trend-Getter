@@ -75,9 +75,11 @@
     fileSelector.addEventListener('change', (event) => {
     const fileList = event.target.files[0];
     console.log(fileList);
-    var myform = document.getElementById("uploadForm")
-    var form = new FormData(myform)
+    var form = new FormData()
     form.append("img", fileList)
+    var request = new XMLHttpRequest();
+    request.open("POST", "http://localhost:3000/upload-img");
+    request.send(form);
 });
 </script>
 <script src="/node_modules/particles.js/particles.js"></script>
