@@ -5,7 +5,6 @@ let firebase = require('firebase');
 let dotenv = require('dotenv').config();
 const multer = require('multer');
 var fs = require('fs');
-const { text } = require('body-parser');
 
 
 let app = express();
@@ -91,7 +90,7 @@ app.post("/signup", function(req, res){
 
 app.post("/signin", function(req,res){
     console.log("POST signin");
-    firebase.database().ref(req.body.username).once('value')
+    firebase.database().ref("users/"+req.body.username).once('value')
         .then(function(snapshot){
             console.log(snapshot.val());
             if(snapshot.val()==null){
@@ -142,6 +141,16 @@ app.post('/upload-blog', function(req, res){
     res.send("file has succesfully been uploaded")
 })
   
+app.get('/blogs', function(req, res){
+    firebase.database().ref("blogs/").once('value')
+        .then(function(snapshot){
+            console.log(snapshot.val());
+            res.sendFile(path.join(__dirname,'./templates/upload.html'))
+        })
+
+})
+
+
 app.listen(3000,()=>{
     console.log('server at http://localhost:3000');
 });
