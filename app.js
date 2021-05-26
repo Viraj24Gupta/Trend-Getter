@@ -141,11 +141,12 @@ app.post('/upload-blog', function(req, res){
     res.send("file has succesfully been uploaded")
 })
   
-app.get('/blogs', function(req, res){
+app.get('/user-blogs', function(req, res){
     firebase.database().ref("blogs/").once('value')
         .then(function(snapshot){
-            console.log(snapshot.val());
-            res.sendFile(path.join(__dirname,'./templates/upload.html'))
+            var blogs = snapshot.val();
+            // res.sendFile(path.join(__dirname,'./templates/upload.html'))
+            res.json(blogs)
         })
 
 })
