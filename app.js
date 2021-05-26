@@ -4,7 +4,8 @@ let bodyParser = require('body-parser');
 let firebase = require('firebase');
 let dotenv = require('dotenv').config();
 const multer = require('multer');
-var fs = require('fs')
+var fs = require('fs');
+const { text } = require('body-parser');
 
 
 let app = express();
@@ -20,9 +21,6 @@ let firebaseConfig = {
     measurementId: process.env.measurementId
 };
 firebase.initializeApp(firebaseConfig);
-
-// const bucket = firebase.bucket()
-// var storage = firebase.storage()
 
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -76,12 +74,12 @@ app.post("/signup", function(req, res){
         // res.sendFile(path.join(__dirname,'../signup.html'))
     }
     else{
-        firebase.database().ref(req.body.username).once('value')
+        firebase.database().ref("users/"+req.body.username).once('value')
             .then(function(snapshot) {
                 console.log(snapshot.val());
                 if(snapshot.val() == null){
                     let data = {name, username, email, password, cpassword} = req.body
-                    firebase.database().ref(req.body.username).set({name, username, email, password, cpassword});
+                    firebase.database().ref("users/"+req.body.username).set({name, username, email, password, cpassword});
                     res.sendFile(path.join(__dirname,'./templates/signin.html'))}
 
                 if(snapshot.val() != null){
@@ -108,30 +106,40 @@ app.post("/signin", function(req,res){
         })
 });
 
-const uploads = multer({
-    storage: multer.memoryStorage(),
-    limits: {
-      fileSize: 20 * 1024 * 1024 // no larger than 5mb, you can change as needed.
-    }
-  });
 
-app.post('/upload-img', uploads.single("img"), async (req, res) => {
-    console.log('Upload Image');
-    console.log(JSON.parse(JSON.stringify(req.file)))
-    let file = req.file;
-    if (file) {
-        uploadImageToStorage(file).then((success) => {
-        res.status(200).send({
-                status: 'success'
-            });
-            }).catch((error) => {
-                console.error(error);
-        });
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './uploads/')
+    },
+    filename: function(req, file, cb) {
+        cb(null,file.originalname)
     }
-  });
+})
+const uploads = multer({
+    storage: storage
+})
+
+app.post('/upload-img', uploads.single('img'), async (req,res) =>{
+  var tmp_path = await req.file.path;
+//   console.log(req)
+
+  var target_path = 'uploads/' + req.file.originalname;
+
+  var src = fs.createReadStream(tmp_path);
+  var dest = fs.createWriteStream(target_path);
+  src.pipe(dest);
+//   res.send("saved")
+  res.sendStatus(200)
+});
 
 app.post('/upload-blog', function(req, res){
-    console.log(req.body)
+    var blog = JSON.parse(JSON.stringify(req.body))
+    if(blog['fancy-file']==null){
+        res.send("no img uploaded")
+        return
+    }
+    firebase.database().ref("blogs/"+blog['fancy-text']).set(blog);
+    res.send("file has succesfully been uploaded")
 })
   
 app.listen(3000,()=>{
@@ -139,35 +147,37 @@ app.listen(3000,()=>{
 });
 
 
-/**
- * Upload the image file to Google Storage
- * @param {File} file object that will be uploaded to Google Storage
- */
- const uploadImageToStorage = (file) => {
-    return new Promise((resolve, reject) => {
-      if (!file) {
-        reject('No image file');
-      }
-      let newFileName = `${file.originalname}_${Date.now()}`;
+
+
+// /**
+//  * Upload the image file to Google Storage
+//  * @param {File} file object that will be uploaded to Google Storage
+//  */
+//  const uploadImageToStorage = (file) => {
+//     return new Promise((resolve, reject) => {
+//       if (!file) {
+//         reject('No image file');
+//       }
+//       let newFileName = `${file.originalname}_${Date.now()}`;
   
-      let fileUpload = storage.file(newFileName);
+//       let fileUpload = storage.file(newFileName);
   
-      const blobStream = fileUpload.createWriteStream({
-        metadata: {
-          contentType: file.mimetype
-        }
-      });
+//       const blobStream = fileUpload.createWriteStream({
+//         metadata: {
+//           contentType: file.mimetype
+//         }
+//       });
   
-      blobStream.on('error', (error) => {
-        reject('Something is wrong! Unable to upload at the moment.');
-      });
+//       blobStream.on('error', (error) => {
+//         reject('Something is wrong! Unable to upload at the moment.');
+//       });
   
-      blobStream.on('finish', () => {
-        // The public URL can be used to directly access the file via HTTP.
-        const url = format(`https://storage.googleapis.com/${storage.name}/${fileUpload.name}`);
-        resolve(url);
-      });
+//       blobStream.on('finish', () => {
+//         // The public URL can be used to directly access the file via HTTP.
+//         const url = format(`https://storage.googleapis.com/${storage.name}/${fileUpload.name}`);
+//         resolve(url);
+//       });
   
-      blobStream.end(file.buffer);
-    });
-  }
+//       blobStream.end(file.buffer);
+//     });
+//   }
