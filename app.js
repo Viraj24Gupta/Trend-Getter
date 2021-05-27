@@ -106,31 +106,46 @@ app.post("/signin", function(req,res){
 });
 
 
-const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, './uploads/')
-    },
-    filename: function(req, file, cb) {
-        cb(null,file.originalname)
+const handleError = (err, res) => {
+    res
+      .status(500)
+      .contentType("text/plain")
+      .end("Oops! Something went wrong!");
+  };
+  
+  const uploads = multer({
+    dest: "./uploads"
+  });
+  
+
+  app.post(
+    "/upload-img",
+    uploads.single("img"),
+    (req, res) => {
+      const tempPath = req.file.path;
+      const targetPath = path.join(__dirname, "./uploads/"+req.file.originalname);
+      var ext = path.extname(req.file.originalname).toLowerCase()
+      if (ext === ".png" || ext === ".jpg" || ext === ".jpeg") {
+        fs.rename(tempPath, targetPath, err => {
+          if (err) return handleError(err, res);
+  
+          res
+            .status(200)
+            .contentType("text/plain")
+            .end("File uploaded!");
+        });
+      } else {
+        fs.unlink(tempPath, err => {
+          if (err) return handleError(err, res);
+  
+          res
+            .status(403)
+            .contentType("text/plain")
+            .end("check file type!");
+        });
+      }
     }
-})
-const uploads = multer({
-    storage: storage
-})
-
-app.post('/upload-img', uploads.single('img'), async (req,res) =>{
-  var tmp_path = await req.file.path;
-//   console.log(req)
-
-  var target_path = 'uploads/' + req.file.originalname;
-
-  var src = fs.createReadStream(tmp_path);
-  var dest = fs.createWriteStream(target_path);
-  src.pipe(dest);
-//   res.send("saved")
-  res.sendStatus(200)
-});
-
+  );
 app.post('/upload-blog', function(req, res){
     var blog = JSON.parse(JSON.stringify(req.body))
     if(blog['fancy-file']==null){
