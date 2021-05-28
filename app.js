@@ -148,13 +148,14 @@ const handleError = (err, res) => {
   );
 app.post('/upload-blog', function(req, res){
     var blog = JSON.parse(JSON.stringify(req.body));
-    if(blog['file']==null){
+    if(blog['file']==''){
         res.send("no img uploaded");
         return
     }
     firebase.database().ref("blogs/"+blog['text']).set(blog);
-    res.send("file has succesfully been uploaded")
-})
+    res.send("file has successfully been uploaded");
+    // console.log(blog);
+});
 
 app.get('/user-blogs', function(req, res){
     firebase.database().ref("blogs/").once('value')
