@@ -40,27 +40,17 @@
                 <div class="upload">
                     <form action="/upload-blog" method="POST" id="uploadForm">
                         <h1>UPLOAD A BLOG</h1>
-<!--                        <div class="row">-->
-<!--                            <input type="checkbox" name="fancy-checkbox" id="fancy-checkbox"/>-->
-<!--                            <label for="fancy-checkbox">Checkbox</label>-->
-<!--                        </div>-->
-<!--                        <div class="row">-->
-<!--                            <input type="radio" name="fancy-radio" id="fancy-radio-1"/>-->
-<!--                            <label for="fancy-radio-1">Radio</label>-->
-<!--                            <input type="radio" name="fancy-radio" id="fancy-radio-2"/>-->
-<!--                            <label for="fancy-radio-2">Radio</label>-->
-<!--                        </div>-->
                         <div class="row">
-                            <input type="text" name="fancy-text" id="fancy-text"/>
-                            <label for="fancy-text">Blog Title</label>
+                            <input type="text" name="text" id="text"/>
+                            <label for="text">Blog Title</label>
                         </div>
                         <div class="row">
-                            <input type="file" name="fancy-file" id="fancy-file"/>
-                            <label for="fancy-file">Image</label>
+                            <input type="file" name="file" id="file"/>
+                            <label for="file">Image</label>
                         </div>
                         <div class="row">
-                            <textarea name="fancy-textarea" id="fancy-textarea"></textarea>
-                            <label for="fancy-textarea">Content</label>
+                            <textarea name="textarea" id="textarea"></textarea>
+                            <label for="textarea">Content</label>
                         </div>
                         <button type="submit" tabindex="0">Upload</button>
                     </form>
@@ -71,12 +61,12 @@
 </div>
 
 <script>
-    const fileSelector = document.getElementById('fancy-file');
+    const fileSelector = document.getElementById('file');
     fileSelector.addEventListener('change', (event) => {
     const fileList = event.target.files[0];
     console.log(fileList);
-    var form = new FormData()
-    form.append("img", fileList)
+    var form = new FormData();
+    form.append("img", fileList);
     var request = new XMLHttpRequest();
     request.open("POST", "http://localhost:3000/upload-img");
     request.send(form);

@@ -6,7 +6,6 @@ let dotenv = require('dotenv').config();
 const multer = require('multer');
 var fs = require('fs');
 
-
 let app = express();
 
 let firebaseConfig = {
@@ -24,8 +23,6 @@ firebase.initializeApp(firebaseConfig);
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'./')));
-app.set('views', path.join(__dirname, 'templates'));
-app.set('view engine', 'ejs');
 
 
 app.get('/', function(req,res){
@@ -115,11 +112,11 @@ const handleError = (err, res) => {
       .contentType("text/plain")
       .end("Oops! Something went wrong!");
   };
-  
+
   const uploads = multer({
     dest: "./uploads"
   });
-  
+
 
   app.post(
     "/upload-img",
@@ -131,7 +128,7 @@ const handleError = (err, res) => {
       if (ext === ".png" || ext === ".jpg" || ext === ".jpeg") {
         fs.rename(tempPath, targetPath, err => {
           if (err) return handleError(err, res);
-  
+
           res
             .status(200)
             .contentType("text/plain")
@@ -140,7 +137,7 @@ const handleError = (err, res) => {
       } else {
         fs.unlink(tempPath, err => {
           if (err) return handleError(err, res);
-  
+
           res
             .status(403)
             .contentType("text/plain")
@@ -150,62 +147,25 @@ const handleError = (err, res) => {
     }
   );
 app.post('/upload-blog', function(req, res){
-    var blog = JSON.parse(JSON.stringify(req.body))
-    if(blog['fancy-file']==null){
-        res.send("no img uploaded")
+    var blog = JSON.parse(JSON.stringify(req.body));
+    if(blog['file']==null){
+        res.send("no img uploaded");
         return
     }
-    firebase.database().ref("blogs/"+blog['fancy-text']).set(blog);
+    firebase.database().ref("blogs/"+blog['text']).set(blog);
     res.send("file has succesfully been uploaded")
 })
-  
+
 app.get('/user-blogs', function(req, res){
     firebase.database().ref("blogs/").once('value')
         .then(function(snapshot){
             var blogs = snapshot.val();
             // res.sendFile(path.join(__dirname,'./templates/upload.html'))
-            res.json(blogs)
+            res.json(blogs);
+            // console.log(blogs);
         })
-
-})
-
+});
 
 app.listen(3000,()=>{
     console.log('server at http://localhost:3000');
 });
-
-
-
-
-// /**
-//  * Upload the image file to Google Storage
-//  * @param {File} file object that will be uploaded to Google Storage
-//  */
-//  const uploadImageToStorage = (file) => {
-//     return new Promise((resolve, reject) => {
-//       if (!file) {
-//         reject('No image file');
-//       }
-//       let newFileName = `${file.originalname}_${Date.now()}`;
-  
-//       let fileUpload = storage.file(newFileName);
-  
-//       const blobStream = fileUpload.createWriteStream({
-//         metadata: {
-//           contentType: file.mimetype
-//         }
-//       });
-  
-//       blobStream.on('error', (error) => {
-//         reject('Something is wrong! Unable to upload at the moment.');
-//       });
-  
-//       blobStream.on('finish', () => {
-//         // The public URL can be used to directly access the file via HTTP.
-//         const url = format(`https://storage.googleapis.com/${storage.name}/${fileUpload.name}`);
-//         resolve(url);
-//       });
-  
-//       blobStream.end(file.buffer);
-//     });
-//   }
