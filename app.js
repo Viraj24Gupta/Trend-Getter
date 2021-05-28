@@ -54,6 +54,10 @@ app.get("/upload", function(req,res){
     console.log("GET upload");
     res.sendFile(path.join(__dirname,'./templates/upload.html'))
 });
+app.get("/user_uploads", function(req,res){
+    console.log("GET user uploads");
+    res.sendFile(path.join(__dirname,'./templates/User-Uploads.html'))
+});
 app.get("/favourites", function(req,res){
     console.log("GET favourites");
     res.sendFile(path.join(__dirname,'./templates/fav.html'))
@@ -153,7 +157,7 @@ app.post('/upload-blog', function(req, res){
         return
     }
     firebase.database().ref("blogs/"+blog['text']).set(blog);
-    res.send("file has successfully been uploaded");
+    res.sendFile(path.join(__dirname,'./templates/User-Uploads.html'));
     // console.log(blog);
 });
 

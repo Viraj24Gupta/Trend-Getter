@@ -31,6 +31,7 @@
                 <li><a href="/food">Food</a></li>
                 <li><a href="/blogs">Blogs</a></li>
                 <li><a href="/upload">Upload a blog</a></li>
+                <li><a href="/user_uploads">User Upload</a></li>
                 <li><a href="/favourites">Favourites</a></li>
                 <li><a href="/signout">Sign Out</a></li>
             </ul>
@@ -281,7 +282,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="users"></div>
                 </div>
             </div>
         </div>
@@ -292,44 +292,6 @@
 
 <!----------------------------------------------------------------------------->
 
-
-
-<script>
-    fetch('http://localhost:3000/user-blogs')
-        .then(response => response.text())
-        .then(result => {
-            var blogs = JSON.parse(result);
-            appendData(blogs)
-        })
-        .catch(error => console.log('error', error));
-    function appendData(blogs) {
-        for(x in blogs) {
-            let card = `
-                <div class="card">
-                    <div class="card__image-holder">
-                        <img class="card__image" src="uploads/${blogs[x].file}" width="300" height="225" />
-                    </div>
-                    <div class="card-title">
-                        <a href="#" class="toggle-info btn">
-                        <span class="left"></span>
-                        <span class="right"></span>
-                        </a>
-                        <h2>
-                        ${blogs[x].text}
-                        </h2>
-                    </div>
-                    <div class="card-flap flap1">
-                        <div class="card-description">
-                            ${blogs[x].textarea}
-                        </div>
-                    </div>
-                </div>
-                `;
-            $('div.users').append(card);
-            console.log("hi");
-        }
-    }
-</script>
 <script src="../node_modules/particles.js/particles.js"></script>
 <script src="../node_modules/particles.js/demo/js/app.js"></script>
 <script type="text/javascript" src="../js/blog.js"></script>

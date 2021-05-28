@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Favourites</title>
     <meta charset="UTF-8">
+    <title>User_Uploads</title>
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/39c8bc8c71.js"></script>
     <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="../css/modal.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/userupload.css">
 </head>
-
 <body>
 <div id="particles-js">
     <div id="wrapper">
@@ -35,45 +33,44 @@
                     <li><a id="menu-toggle"><i class="fas fa-align-justify"></i></a></li>
                     <li><h1>TrendGetter</h1></li>
                 </ul>
-            </div></nav>
+            </div>
+            </nav>
             <div class="newww">
-                <h1 style="color: white; text-align: center;font-size: 50px">FAVOURITES</h1>
-                <main>
-                    <div class="slide-container">
-                        <section class="container" id="store-products">
-
-                        </section>
-                    </div>
-                </main>
+                <h1 style="color: white; text-align: center;font-size: 50px;margin-bottom: 30px">USER UPLOADS</h1>
+                <div class="users"></div>
             </div>
         </div>
     </div>
 </div>
-
-<script src="/node_modules/particles.js/particles.js"></script>
-<script src="/node_modules/particles.js/demo/js/app.js"></script>
-<script type="text/javascript" src="/js/home.js"></script>
-<script type="text/javascript" src="../js/modal.js"></script>
-<script type="text/javascript" src="../js/script.js"></script>
 <script>
-    let getdata = getCookie("favourite");
-    console.log(getdata);
-    let parsedata = JSON.parse(getdata);
-    var x;
-    for(x in parsedata){
-        if(x ==0){
-            continue
+    fetch('http://localhost:3000/user-blogs')
+        .then(response => response.text())
+        .then(result => {
+            var blogs = JSON.parse(result);
+            appendData(blogs)
+        })
+        .catch(error => console.log('error', error));
+    function appendData(blogs) {
+        for(x in blogs) {
+            let card = `
+                <div class="card">
+                    <div class="card_img">
+                        <img class="card_image" src="uploads/${blogs[x].file}" width="400" />
+                    </div>
+                    <div class="card_title">
+                        <h2>${blogs[x].text}</h2>
+                    </div>
+                    <div class="card_content">
+                            ${blogs[x].textarea}
+                    </div>
+                </div>
+                `;
+            $('div.users').append(card);
         }
-        let a = parsedata[x][0].split("/");
-        let data = `
-        <div class="store-product watch">
-        <img src="${parsedata[x][0]}" alt="" width="250" height="250" class="myImg" data-original="${a[a.length-1]}">
-        <div class="product-details">
-            <h2>${parsedata[x][1]}</h2>
-        </div>
-    </div> `;
-        $('section.container').append(data);
     }
 </script>
+<script type="text/javascript" src="/js/home.js"></script>
+<script src="/node_modules/particles.js/particles.js"></script>
+<script src="/node_modules/particles.js/demo/js/app.js"></script>
 </body>
 </html>
