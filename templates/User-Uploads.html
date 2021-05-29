@@ -55,7 +55,7 @@
             let card = `
                 <div class="card">
                     <div class="card_img">
-                        <img class="card_image" src="uploads/${blogs[x].file}" width="400" />
+                        <img alt="time exceeded. please reload page" target="_blank" class="card_image" src="uploads/${blogs[x].file}" width="400" onclick="window.open(this.src, '_blank');"/>
                     </div>
                     <div class="card_title">
                         <h2>${blogs[x].text}</h2>
