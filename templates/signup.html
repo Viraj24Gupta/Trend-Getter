@@ -81,10 +81,10 @@
 
         let usernameRegex = /^[a-zA-Z0-9]+$/;
         if (!usernameRegex.test(username.value)) {
-            name.setCustomValidity("Username should be alphanumeric");
+            username.setCustomValidity("Username should be alphanumeric");
         }
         else {
-            name.setCustomValidity("");
+            username.setCustomValidity("");
         }
 
         let emailRegex = /^[a-z0-9_]*[@][a-z]+[.][a-z]+$/;
