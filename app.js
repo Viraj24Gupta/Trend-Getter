@@ -171,6 +171,8 @@ app.get('/user-blogs', function(req, res){
         })
 });
 
-app.listen(3000,()=>{
-    console.log('server at http://localhost:3000');
-});
+var host = '0.0.0.0';
+var port = process.env.PORT || 3000;
+app.listen(port, host, function() {
+    console.log("Server started.......");
+  });
