@@ -97,7 +97,7 @@
 
         let passwordRegex = /^[A-Z][a-z][A-Za-z0-9]{7,13}$/;
         if (!passwordRegex.test(password.value)) {
-            password.setCustomValidity("password should contain 8- 16 digits and 1 uppercase,1 lowercase and 1 number atleast");
+            password.setCustomValidity("password should contain 9- 16 digits and 1 uppercase,1 lowercase and 1 number atleast");
         }
         else {
             password.setCustomValidity("");
