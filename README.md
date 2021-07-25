@@ -1,3 +1,4 @@
+# TrendGetter (https://lit-harbor-04663.herokuapp.com/)
 ## Pre-Requisites
 Node.js to be already installed
 ### Steps To Run:
